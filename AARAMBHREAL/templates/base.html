@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Aarambh Real Estate{% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Aarambh Real Estate</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('properties') }}">Properties</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    {% block content %}
+    {% endblock %}
+
+
+    <!-- FOOTER -->
+    <footer style="text-align:center; padding:20px; margin-top:40px;">
+        <p>© 2026 Aarambh Real Estate | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

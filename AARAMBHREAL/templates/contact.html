@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <!-- Link your CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <h1>Contact Us</h1>
+
+    <div class="form-container">
+        <form method="POST">
+            
+            {{ form.hidden_tag() }}
+
+            <!-- Name -->
+            <div class="form-group">
+                {{ form.name.label }} <br>
+                {{ form.name(size=30) }}
+            </div>
+
+            <br>
+
+            <!-- Message -->
+            <div class="form-group">
+                {{ form.message.label }} <br>
+                {{ form.message(rows=5, cols=30) }}
+            </div>
+
+            <br>
+
+            <!-- Submit -->
+            <div class="form-group">
+                {{ form.submit() }}
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>s

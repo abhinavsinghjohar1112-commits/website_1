@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Property Details{% endblock %}
+
+{% block content %}
+
+<div style="max-width: 900px; margin: 40px auto;">
+
+    <h2>{{ property.name }}</h2>
+
+    <!-- IMAGE -->
+    {% if property.image %}
+        <img src="{{ url_for('static', filename=property.image.split(',')[0]) }}" 
+             style="width:100%; border-radius:10px;">
+    {% endif %}
+
+    <br><br>
+
+    <p><b>Location:</b> {{ property.location }}</p>
+    <p><b>Price:</b> ₹ {{ property.price }}</p>
+
+    {% if property.description %}
+        <p><b>Description:</b> {{ property.description }}</p>
+    {% endif %}
+
+    <br>
+
+    <a href="{{ url_for('register') }}" class="btn">
+        Contact / Book Now
+    </a>
+
+</div>
+
+{% endblock %}

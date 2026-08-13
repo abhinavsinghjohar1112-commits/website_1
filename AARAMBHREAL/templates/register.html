@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Register | Aarambh Real Estate{% endblock %}
+
+{% block content %}
+
+<h2 class="section-title">Register Your Interest</h2>
+
+<div class="form-container">
+
+    <form method="POST">
+
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.name.label }}
+            {{ form.name(placeholder="Enter your name") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.phone.label }}
+            {{ form.phone(placeholder="Enter your phone number") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.property.label }}
+            {{ form.property(placeholder="Property name") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.submit(class="btn") }}
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
